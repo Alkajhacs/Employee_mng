@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="department.js"></script>
+    <script src="sorting.js"></script>
+</head>
+<body>
+    <script src="search.js"></script>
+    <table width="100%" background-color="black" style="height:45px;" >
+        <tr class="heading" style="color: red;background-color: black;">
+            <th onclick="index.html" width="15%" style="text-align: left;"><a href="index.html" style="color: red;">Employee</a></th>
+            <th width="30%" style="text-align: left;"><a href="department.html" style="color: red;">Department</a></th>
+        </tr>
+    </table>
+    <br><br>
+    <form onsubmit="event.preventDefault();ondeptform1submit();" autocomplete="off">
+        <label >Department id:</label>
+        <input id="txtid" type="text" name="id"> <br><br>
+        <label >Department Name:</label>
+        <input id="txtname" type="text" name="fullname"> <br><br>
+        <div class="form.action.buttons">
+            <input type= "submit" value="submit">
+        </div>
+    </form>
+    <form autocomplete="off">
+        <table class=".pagination" id="employeelist" align="center" border=2 width= 800>
+            <caption><h3>Department Details</h3><caption>
+                <input type="text" id="myInput" placeholder="Search by department Name......."  onkeyup="searchFun('data2')" size="115">
+            <thead>
+                <tr style="background-color: cornflowerblue;">
+                    <th onclick="sortTable(0)"><u>DId</u></th>
+                    <th onclick="sortTable(1)"><u>Department Name</u> </th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody >
+            </tbody>
+        </table>
+        <center>
+            <br><br>
+            <div style="text-align:center;">
+                <input type="button" id="first" onclick="firstPage()" value="first" />
+                <input type="button" id="next" onclick="nextPage()" value="next" />
+                <input type="button" id="previous" onclick="previousPage()" value="previous" />
+                <input type="button" id="last" onclick="lastPage()" value="last" />
+            
+                <div id="list"></div>
+                </div>
+            <br>
+        </center>
+    </form>
+</body>
+</html>
